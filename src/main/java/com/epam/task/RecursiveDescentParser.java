@@ -11,7 +11,6 @@ public class RecursiveDescentParser {
         }
         else {
             lexemes.back();
-//            System.out.println(plusAndMinus(lexemes));
             System.out.println("method expr does return");
             return plusAndMinus(lexemes);
         }
@@ -71,7 +70,6 @@ public class RecursiveDescentParser {
         System.out.println("value in squaring = " + value);
         return value;
     }
-//    2 + 3 * 45.3 * 90 + 20 - 8 / 20 - sqrt4
 
     public double factor(LexemeBuffer lexemes) {
         counter++;
@@ -80,18 +78,11 @@ public class RecursiveDescentParser {
         if (lexeme.type == LexemeType.NUMBER) {
             System.out.println("lexeme.value in factor = " + lexeme.value);
             return Double.parseDouble(lexeme.value);
-        } //else return 0;
+        }
         else if (lexeme.type == LexemeType.END_OF_LINE) {
             lexemes.back();
-            //System.exit(0);
             return 0;
         } else
             throw new RuntimeException("Trouble in factor method: " + lexeme.value + ", position: " + lexemes.getPosition());
     }
-//[Lexeme{type=NUMBER, value='2'}, Lexeme{type=OPERATOR_PLUS, value='+'}, Lexeme{type=NUMBER, value='3'},
-// Lexeme{type=OPERATOR_MULTIPLY, value='*'}, Lexeme{type=NUMBER, value='45.3'}, Lexeme{type=OPERATOR_MULTIPLY, value='*'},
-// Lexeme{type=NUMBER, value='90'}, Lexeme{type=OPERATOR_PLUS, value='+'}, Lexeme{type=NUMBER, value='20'},
-// Lexeme{type=OPERATOR_MINUS, value='-'}, Lexeme{type=NUMBER, value='8'}, Lexeme{type=OPERATOR_DIVIDE, value='/'},
-// Lexeme{type=NUMBER, value='20'}, Lexeme{type=OPERATOR_MINUS, value='-'}, Lexeme{type=OPERATOR_SQUARING, value='4'},
-// Lexeme{type=END_OF_LINE, value=''}]
 }
