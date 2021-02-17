@@ -1,0 +1,7 @@
+package com.epam.task;
+
+public enum LexemeType {
+    OPERATOR_PLUS, OPERATOR_MINUS, OPERATOR_MULTIPLY, OPERATOR_DIVIDE, OPERATOR_SQUARING,
+    NUMBER,
+    END_OF_LINE;
+}
